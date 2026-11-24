@@ -1,8 +1,5 @@
 # Mini production ML system: transaction fraud detection (PaySim)
 
-ML Model Engineering, Graded Assignment 1, Option B.
-Ayushi Kathayat, student ID 2025em1200237.
-
 A fraud scorer built the way it would be shipped: leak-free temporal split, a
 LightGBM model with cost-based thresholding, a FastAPI service and a batch CLI
 that share one scoring class, latency/throughput benchmarks, edge-case checks
