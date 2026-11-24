@@ -7,21 +7,21 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 OUT = Path(__file__).resolve().parent
-BLUE, TEAL, AMBER, GREY, RED = "#dbe9fb", "#d8f0ea", "#fdebc8", "#eceff3", "#f9d6d5"
+BLUE, TEAL, AMBER, GREY, RED = "#e9ebee", "#dcdfe3", "#f4f4f4", "#ffffff", "#ece4e4"
 
 
 def box(ax, x, y, w, h, text, fc, fs=8, bold=False):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.12",
-                                fc=fc, ec="#44546a", lw=1.0))
+                                fc=fc, ec="#333333", lw=1.0))
     ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs,
             fontweight="bold" if bold else "normal", linespacing=1.25)
 
 
 def arrow(ax, p, q, text=None, rad=0.0, fs=7):
     ax.add_patch(FancyArrowPatch(p, q, arrowstyle="-|>", mutation_scale=10, lw=1.1,
-                                 color="#44546a", connectionstyle=f"arc3,rad={rad}"))
+                                 color="#333333", connectionstyle=f"arc3,rad={rad}"))
     if text:
-        ax.text((p[0] + q[0]) / 2, (p[1] + q[1]) / 2 + 0.16, text, ha="center", fontsize=fs, color="#44546a")
+        ax.text((p[0] + q[0]) / 2, (p[1] + q[1]) / 2 + 0.16, text, ha="center", fontsize=fs, color="#333333")
 
 
 def architecture():
@@ -32,10 +32,10 @@ def architecture():
     for y, t in ((11.9, "OFFLINE: training pipeline  (python -m src.train)"),
                  (7.55, "SERVING: online API and batch CLI share one Predictor"),
                  (2.3, "MONITORING and RELIABILITY")):
-        ax.text(0.2, y, t, fontsize=9, fontweight="bold", color="#1f3864")
-    ax.plot([0.2, 21.8], [11.75, 11.75], color="#9aa9bf", lw=0.8)
-    ax.plot([0.2, 21.8], [7.4, 7.4], color="#9aa9bf", lw=0.8)
-    ax.plot([0.2, 21.8], [2.15, 2.15], color="#9aa9bf", lw=0.8)
+        ax.text(0.2, y, t, fontsize=9, fontweight="bold", color="#222222")
+    ax.plot([0.2, 21.8], [11.75, 11.75], color="#999999", lw=0.8)
+    ax.plot([0.2, 21.8], [7.4, 7.4], color="#999999", lw=0.8)
+    ax.plot([0.2, 21.8], [2.15, 2.15], color="#999999", lw=0.8)
 
     # offline lane
     box(ax, 0.3, 8.6, 3.2, 2.5, "paysim.csv\n6.36M rows\n(raw, not shipped)", GREY)
@@ -59,8 +59,8 @@ def architecture():
     arrow(ax, (13.6, 6.0), (14.4, 6.15)); arrow(ax, (13.6, 4.6), (14.4, 4.8), "model\nfails", fs=6.5)
     arrow(ax, (18.1, 6.15), (18.8, 5.9)); arrow(ax, (18.1, 4.8), (18.8, 5.2))
     ax.annotate("", xy=(11.3, 6.8), xytext=(20.15, 8.6),
-                arrowprops=dict(arrowstyle="-|>", color="#44546a", lw=1.1, connectionstyle="arc3,rad=0.25"))
-    ax.text(16.6, 8.05, "loaded at start-up", fontsize=7, color="#44546a")
+                arrowprops=dict(arrowstyle="-|>", color="#333333", lw=1.1, connectionstyle="arc3,rad=0.25"))
+    ax.text(16.6, 8.05, "loaded at start-up", fontsize=7, color="#333333")
 
     # monitoring lane
     box(ax, 9.0, 0.2, 4.6, 1.6, "GET /stats and /health\nlatency p50/p95/p99,\n4xx/5xx, fallback count,\nalert rate", BLUE, fs=7.5)
@@ -79,11 +79,11 @@ def timeline():
             (450, 600, "VAL  451-600\n100,704 | 1,556 | 1.55%", AMBER),
             (600, 743, "TEST  601-743\n43,550 | 1,600 | 3.67%", TEAL)]
     for a, b, t, c in segs:
-        ax.add_patch(plt.Rectangle((a, 0.7), b - a, 0.9, fc=c, ec="#44546a"))
+        ax.add_patch(plt.Rectangle((a, 0.7), b - a, 0.9, fc=c, ec="#333333"))
         ax.text((a + b) / 2, 1.15, t, ha="center", va="center", fontsize=7.5)
-    ax.annotate("", xy=(743, 0.45), xytext=(0, 0.45), arrowprops=dict(arrowstyle="-|>", color="#44546a"))
+    ax.annotate("", xy=(743, 0.45), xytext=(0, 0.45), arrowprops=dict(arrowstyle="-|>", color="#333333"))
     ax.text(371, 0.12, "time (hourly steps).  No partition sees anything from a later one; fit on train, apply to val/test.",
-            ha="center", fontsize=7.5, color="#44546a")
+            ha="center", fontsize=7.5, color="#333333")
     fig.savefig(OUT / "split_timeline.png", dpi=170, bbox_inches="tight")
     plt.close(fig)
 
