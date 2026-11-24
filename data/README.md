@@ -1,7 +1,7 @@
 # Data
 
 `paysim.csv` (about 470 MB) is not included. Download it from Kaggle:
-"Synthetic Financial Datasets For Fraud Detection" (ealaxi/paysim1), rename the
+"Synthetic Financial Datasets For Fraud Detection" (https://www.kaggle.com/datasets/ealaxi/paysim1), rename the
 file to `paysim.csv` and place it in this folder. A copy one level up
 (`../data/paysim.csv`) is also picked up automatically.
 
