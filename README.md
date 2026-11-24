@@ -18,7 +18,7 @@ powershell -ExecutionPolicy Bypass -File .\run_all.ps1          # add -PyVersion
 Linux/macOS: `bash run_all.sh`. The script creates `.venv`, installs
 `requirements.txt`, runs the tests, trains, evaluates, runs the drift
 simulation, robustness checks and benchmarks, then writes `requirements.lock.txt`
-(exact versions of the environment that produced the reported numbers).
+(exact versions of the environment that produced the reported results).
 
 Step by step:
 
@@ -47,8 +47,8 @@ Expected end state: `pytest` ends with all tests passing, `reports/` holds `metr
   interpreter, e.g. `py -3.12 -m venv .venv`, or pass `-PyVersion "-3.12"` to `run_all.ps1`.
 - *Port already in use when serving*: pick another port (`--port 8001`); the benchmark chooses free ports itself.
 - *PowerShell blocks scripts*: use the `-ExecutionPolicy Bypass` form shown above.
-- *Numbers differ slightly from the report*: LightGBM uses all CPU cores and its tie-breaking can vary
-  between machines. The versions that produced the report are in `requirements.lock.txt`.
+- *Numbers differ slightly from the published results*: LightGBM uses all CPU cores and its tie-breaking can vary
+  between machines. The versions that produced the results in `reports/` are in `requirements.lock.txt`.
 
 ## Serving
 
@@ -91,7 +91,7 @@ Output has `transaction_id, fraud_probability, is_fraud, mode`. Unusable rows go
 ## Results at a glance
 
 Held-out test window (hours 601-743, 43,550 in-scope transactions, 1,600 fraud). Full tables are in
-`reports/metrics.json` and `reports/results_table.md`; the report PDF discusses them.
+`reports/metrics.json` and `reports/results_table.md`.
 
 | Model | PR-AUC | Precision | Recall |
 |---|---|---|---|
@@ -144,7 +144,7 @@ reports/         metrics.json, benchmark.json, drift_report.json, robustness.jso
 - **A simulator artifact to be aware of.** About 98% of PaySim fraud moves exactly the
   sender's whole balance (`amount == oldbalanceOrg`) and no legitimate in-scope transaction
   does, so one rule scores near-perfectly and the model's PR-AUC is close to 1. That says
-  more about the simulator than about real fraud. The report therefore compares the model
+  more about the simulator than about real fraud. The evaluation therefore compares the model
   with this exact-drain rule and with a sender-balance-blind ablation that hides the signature.
   The drain rule doubles as the API's fallback when the model is unavailable.
 - **Imbalance.** Class weighting (`scale_pos_weight`, searched on validation) plus a

@@ -1,5 +1,5 @@
 """Project-wide constants. Everything that is a modelling decision lives here
-so the report, the training code and the serving code cannot drift apart."""
+so the reports, the training code and the serving code cannot drift apart."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,7 +31,7 @@ RAW_FEATURE_COLS = [
     "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest",
 ]
 BALANCE_COLS = ["oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest"]
-# Columns deliberately never used as inputs (see leakage audit in the report).
+# Columns deliberately never used as inputs (see the leakage audit in data_pipeline.py).
 FORBIDDEN_COLS = {"isFraud", "isFlaggedFraud", "nameOrig", "nameDest"}
 
 # engineered feature groups (built in src/features.py)

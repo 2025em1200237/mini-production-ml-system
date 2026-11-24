@@ -71,7 +71,7 @@ def temporal_split(df: pd.DataFrame):
 
 
 def leakage_audit(train, val, test, feature_cols=None) -> dict:
-    """Explicit checks that back the leakage claims in the report."""
+    """Explicit checks that back the leakage guarantees."""
     feature_cols = feature_cols or C.MODEL_FEATURES
     checks = {
         "train_max_step_lt_val_min_step": bool(train["step"].max() < val["step"].min()),
