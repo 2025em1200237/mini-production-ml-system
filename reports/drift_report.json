@@ -1,0 +1,230 @@
+{
+  "train_vs_val": {
+    "features": {
+      "amount_log": {
+        "psi": 0.001992169122503514,
+        "ks": 0.017989354941213842,
+        "status": "ok"
+      },
+      "old_org_log": {
+        "psi": 0.013911381801259561,
+        "ks": 0.06193312678741658,
+        "status": "ok"
+      },
+      "old_dest_log": {
+        "psi": 0.006256858828078373,
+        "ks": 0.02284545598983162,
+        "status": "ok"
+      },
+      "amount_to_balance": {
+        "psi": 0.010150181269627193,
+        "ks": 0.05046367969494758,
+        "status": "ok"
+      },
+      "amount_to_dest_log": {
+        "psi": 0.005549700885555546,
+        "ks": 0.024584588496981308,
+        "status": "ok"
+      },
+      "hour_of_day": {
+        "psi": 0.20071914475161856,
+        "ks": 0.11598190340006354,
+        "status": "warn"
+      },
+      "org_would_empty": {
+        "psi": 0.010869694777321186,
+        "ks": null,
+        "status": "ok"
+      },
+      "dest_empty_before": {
+        "psi": 0.0052748975225578865,
+        "ks": null,
+        "status": "ok"
+      },
+      "type": {
+        "psi": 0.007911328740475568,
+        "ks": null,
+        "status": "ok"
+      }
+    },
+    "n_rows": 100704,
+    "score": {
+      "psi": 0.0,
+      "status": "ok"
+    },
+    "n_alert": 0,
+    "n_warn": 1,
+    "retrain_recommended": false,
+    "fraud_rate_label": 0.015451223387353035
+  },
+  "train_vs_test": {
+    "features": {
+      "amount_log": {
+        "psi": 0.00029011496176463994,
+        "ks": 0.010699770378874818,
+        "status": "ok"
+      },
+      "old_org_log": {
+        "psi": 0.054475874645304345,
+        "ks": 0.1201814006888634,
+        "status": "warn"
+      },
+      "old_dest_log": {
+        "psi": 0.023935645554840606,
+        "ks": 0.059754535017221555,
+        "status": "ok"
+      },
+      "amount_to_balance": {
+        "psi": 0.040342294871287473,
+        "ks": 0.0976417910447761,
+        "status": "ok"
+      },
+      "amount_to_dest_log": {
+        "psi": 0.025121034592067243,
+        "ks": 0.06974724454649839,
+        "status": "ok"
+      },
+      "hour_of_day": {
+        "psi": 0.19624048523959559,
+        "ks": 0.061959873708381165,
+        "status": "warn"
+      },
+      "org_would_empty": {
+        "psi": 0.04374119097597068,
+        "ks": null,
+        "status": "ok"
+      },
+      "dest_empty_before": {
+        "psi": 0.02454997115771592,
+        "ks": null,
+        "status": "ok"
+      },
+      "type": {
+        "psi": 0.010662631818903067,
+        "ks": null,
+        "status": "ok"
+      }
+    },
+    "n_rows": 43550,
+    "score": {
+      "psi": 0.010326211450944048,
+      "status": "ok"
+    },
+    "n_alert": 0,
+    "n_warn": 2,
+    "retrain_recommended": false,
+    "fraud_rate_label": 0.03673938002296211
+  },
+  "train_vs_test_x3_shock": {
+    "features": {
+      "amount_log": {
+        "psi": 1.0304488278260187,
+        "ks": 0.44202158438576356,
+        "status": "alert"
+      },
+      "old_org_log": {
+        "psi": 0.32008508257029444,
+        "ks": 0.24109580941446618,
+        "status": "alert"
+      },
+      "old_dest_log": {
+        "psi": 0.3243417388819211,
+        "ks": 0.19893518943742827,
+        "status": "alert"
+      },
+      "amount_to_balance": {
+        "psi": 0.039457457023282315,
+        "ks": 0.09761882893226176,
+        "status": "ok"
+      },
+      "amount_to_dest_log": {
+        "psi": 0.05527672059747392,
+        "ks": 0.09737738231917337,
+        "status": "ok"
+      },
+      "hour_of_day": {
+        "psi": 0.19624048523959559,
+        "ks": 0.061959873708381165,
+        "status": "warn"
+      },
+      "org_would_empty": {
+        "psi": 0.04374119097597068,
+        "ks": null,
+        "status": "ok"
+      },
+      "dest_empty_before": {
+        "psi": 0.02454997115771592,
+        "ks": null,
+        "status": "ok"
+      },
+      "type": {
+        "psi": 0.010662631818903067,
+        "ks": null,
+        "status": "ok"
+      }
+    },
+    "n_rows": 43550,
+    "score": {
+      "psi": 0.05065397526169507,
+      "status": "ok"
+    },
+    "n_alert": 3,
+    "n_warn": 1,
+    "retrain_recommended": true,
+    "fraud_rate_label": 0.03673938002296211
+  },
+  "timeline": [
+    {
+      "steps": [
+        451,
+        525
+      ],
+      "rows": 40075,
+      "fraud_rate": 0.01966313162819713,
+      "alert_rate": 0.02033686837180287,
+      "max_feature_psi": 0.6209118536488885,
+      "score_psi": 0.00041147485399494865,
+      "n_alert": 1,
+      "n_warn": 0
+    },
+    {
+      "steps": [
+        526,
+        600
+      ],
+      "rows": 60629,
+      "fraud_rate": 0.012667205462732355,
+      "alert_rate": 0.013425918289927263,
+      "max_feature_psi": 0.14848453958383864,
+      "score_psi": 0.0001815526956556529,
+      "n_alert": 0,
+      "n_warn": 1
+    },
+    {
+      "steps": [
+        601,
+        675
+      ],
+      "rows": 15016,
+      "fraud_rate": 0.05567394778902504,
+      "alert_rate": 0.05647309536494406,
+      "max_feature_psi": 0.49791314333636866,
+      "score_psi": 0.03597802587939637,
+      "n_alert": 1,
+      "n_warn": 2
+    },
+    {
+      "steps": [
+        676,
+        743
+      ],
+      "rows": 28534,
+      "fraud_rate": 0.026775075348706805,
+      "alert_rate": 0.027440947641410248,
+      "max_feature_psi": 0.587018429977968,
+      "score_psi": 0.009266348442456973,
+      "n_alert": 1,
+      "n_warn": 1
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "model_version": "lgbm-20261124-1540",
+  "quick_mode": false,
+  "train_rows": 2626155,
+  "train_fraud_rate": 0.0019256289137541387,
+  "best_params": {
+    "num_leaves": 63,
+    "learning_rate": 0.03,
+    "min_child_samples": 20,
+    "subsample": 0.85,
+    "colsample_bytree": 1.0,
+    "reg_lambda": 10.0,
+    "scale_pos_weight": 518.3108562388768
+  },
+  "best_iteration": 439,
+  "early_stopping_metric": "average_precision",
+  "val_pr_auc": {
+    "logreg": 0.8425539915498531,
+    "lightgbm": 0.9993487179147822,
+    "lightgbm_post_settlement_ablation": 0.9999922471130698,
+    "lightgbm_sender_blind_ablation": 0.5093839968397462
+  },
+  "imbalance_ablation": {
+    "weighted": {
+      "scale_pos_weight": 518.3108562388768,
+      "val_pr_auc": 0.9993487179147822,
+      "val_min_cost": 60012.578199999996
+    },
+    "unweighted": {
+      "scale_pos_weight": 1.0,
+      "val_pr_auc": 0.9992863420457306,
+      "val_min_cost": 60679.80455
+    }
+  },
+  "trials": [
+    {
+      "trial": 0,
+      "num_leaves": 15,
+      "learning_rate": 0.1,
+      "min_child_samples": 100,
+      "subsample": 0.85,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 10.0,
+      "scale_pos_weight": 1.0,
+      "best_iteration": 312,
+      "val_pr_auc": 0.9992752300940319,
+      "seconds": 23.2
+    },
+    {
+      "trial": 1,
+      "num_leaves": 63,
+      "learning_rate": 0.03,
+      "min_child_samples": 20,
+      "subsample": 0.85,
+      "colsample_bytree": 1.0,
+      "reg_lambda": 10.0,
+      "scale_pos_weight": 518.3108562388768,
+      "best_iteration": 439,
+      "val_pr_auc": 0.9993487179147822,
+      "seconds": 43.2
+    },
+    {
+      "trial": 2,
+      "num_leaves": 63,
+      "learning_rate": 0.1,
+      "min_child_samples": 100,
+      "subsample": 0.7,
+      "colsample_bytree": 1.0,
+      "reg_lambda": 1.0,
+      "scale_pos_weight": 22.766441448739343,
+      "best_iteration": 229,
+      "val_pr_auc": 0.9815815339340719,
+      "seconds": 24.4
+    },
+    {
+      "trial": 3,
+      "num_leaves": 31,
+      "learning_rate": 0.03,
+      "min_child_samples": 300,
+      "subsample": 1.0,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 1.0,
+      "scale_pos_weight": 518.3108562388768,
+      "best_iteration": 310,
+      "val_pr_auc": 0.9991717984630972,
+      "seconds": 25.3
+    },
+    {
+      "trial": 4,
+      "num_leaves": 63,
+      "learning_rate": 0.05,
+      "min_child_samples": 50,
+      "subsample": 0.7,
+      "colsample_bytree": 0.6,
+      "reg_lambda": 1.0,
+      "scale_pos_weight": 518.3108562388768,
+      "best_iteration": 159,
+      "val_pr_auc": 0.9068307085131041,
+      "seconds": 21.7
+    },
+    {
+      "trial": 5,
+      "num_leaves": 15,
+      "learning_rate": 0.1,
+      "min_child_samples": 300,
+      "subsample": 0.7,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 0.0,
+      "scale_pos_weight": 518.3108562388768,
+      "best_iteration": 48,
+      "val_pr_auc": 0.5239207870602073,
+      "seconds": 6.0
+    },
+    {
+      "trial": 6,
+      "num_leaves": 63,
+      "learning_rate": 0.05,
+      "min_child_samples": 20,
+      "subsample": 1.0,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 10.0,
+      "scale_pos_weight": 518.3108562388768,
+      "best_iteration": 500,
+      "val_pr_auc": 0.963727075057236,
+      "seconds": 45.1
+    },
+    {
+      "trial": 7,
+      "num_leaves": 127,
+      "learning_rate": 0.1,
+      "min_child_samples": 20,
+      "subsample": 0.85,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 1.0,
+      "scale_pos_weight": 1.0,
+      "best_iteration": 94,
+      "val_pr_auc": 0.9992881218735459,
+      "seconds": 13.3
+    }
+  ],
+  "feature_names": [
+    "amount_log",
+    "old_org_log",
+    "old_dest_log",
+    "amount_to_balance",
+    "amount_to_dest_log",
+    "hour_of_day",
+    "org_would_empty",
+    "dest_empty_before",
+    "type_CASH_OUT",
+    "type_TRANSFER"
+  ],
+  "train_seconds": 304.6,
+  "versions": {
+    "python": "3.14.10",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.5"
+  },
+  "split_summary": {
+    "train": {
+      "rows": 2626155,
+      "fraud": 5057,
+      "fraud_rate": 0.0019256289137541387,
+      "step_min": 1,
+      "step_max": 450
+    },
+    "val": {
+      "rows": 100704,
+      "fraud": 1556,
+      "fraud_rate": 0.015451223387353035,
+      "step_min": 451,
+      "step_max": 600
+    },
+    "test": {
+      "rows": 43550,
+      "fraud": 1600,
+      "fraud_rate": 0.03673938002296211,
+      "step_min": 601,
+      "step_max": 743
+    }
+  }
+}

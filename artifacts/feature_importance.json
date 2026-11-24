@@ -1,0 +1,12 @@
+{
+  "amount_log": 15021776.693546414,
+  "old_org_log": 1237330.4911708832,
+  "old_dest_log": 642943.7347403765,
+  "amount_to_balance": 468329450.2706909,
+  "amount_to_dest_log": 812890.4317872524,
+  "hour_of_day": 523642.9925131798,
+  "org_would_empty": 86194337.25346684,
+  "dest_empty_before": 57.136720180511475,
+  "type_CASH_OUT": 58153.240854501724,
+  "type_TRANSFER": 1754.455885887146
+}

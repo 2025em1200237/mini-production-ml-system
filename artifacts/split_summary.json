@@ -1,0 +1,67 @@
+{
+  "data_quality": {
+    "rows": 6362620,
+    "null_cells": 0,
+    "negative_amounts": 0,
+    "negative_balances": 0,
+    "zero_amount_rows": 16,
+    "fraud_rate_all": 0.001290820448180152,
+    "fraud_by_type": {
+      "CASH_IN": {
+        "rows": 1399284,
+        "fraud": 0
+      },
+      "CASH_OUT": {
+        "rows": 2237500,
+        "fraud": 4116
+      },
+      "DEBIT": {
+        "rows": 41432,
+        "fraud": 0
+      },
+      "PAYMENT": {
+        "rows": 2151495,
+        "fraud": 0
+      },
+      "TRANSFER": {
+        "rows": 532909,
+        "fraud": 4097
+      }
+    },
+    "step_min": 1,
+    "step_max": 743
+  },
+  "leakage_audit": {
+    "train_max_step_lt_val_min_step": true,
+    "val_max_step_lt_test_min_step": true,
+    "no_forbidden_columns_in_features": true,
+    "raw_frames_have_no_identifier_columns": true,
+    "target_not_in_features": true,
+    "serving_model_uses_no_post_settlement_features": true,
+    "all_partitions_non_empty": true,
+    "all_passed": true
+  },
+  "splits": {
+    "train": {
+      "rows": 2626155,
+      "fraud": 5057,
+      "fraud_rate": 0.0019256289137541387,
+      "step_min": 1,
+      "step_max": 450
+    },
+    "val": {
+      "rows": 100704,
+      "fraud": 1556,
+      "fraud_rate": 0.015451223387353035,
+      "step_min": 451,
+      "step_max": 600
+    },
+    "test": {
+      "rows": 43550,
+      "fraud": 1600,
+      "fraud_rate": 0.03673938002296211,
+      "step_min": 601,
+      "step_max": 743
+    }
+  }
+}

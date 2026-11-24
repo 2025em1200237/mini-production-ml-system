@@ -1,0 +1,10 @@
+{
+  "threshold": 0.04074801376274978,
+  "model_version": "lgbm-20261124-1540",
+  "selection_rule": "minimise expected cost on validation",
+  "review_cost": 25.0,
+  "friction_rate": 0.001,
+  "val_pr_auc": 0.9993487179147822,
+  "val_cost": 60012.578199999996,
+  "val_no_model_cost": 2007332497.7399974
+}

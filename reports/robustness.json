@@ -1,0 +1,191 @@
+[
+  {
+    "case": "typical fraud-like transfer",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": 0.9999978729926196,
+    "passed": true
+  },
+  {
+    "case": "all balances missing",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": 0.00011175113901689899,
+    "passed": true
+  },
+  {
+    "case": "destination balances missing",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": 0.9999592940548452,
+    "passed": true
+  },
+  {
+    "case": "zero amount",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": 0.0016410604661986033,
+    "passed": true
+  },
+  {
+    "case": "extreme amount (9.9e9)",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": 0.9999985609155211,
+    "passed": true
+  },
+  {
+    "case": "PAYMENT (out of scope)",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "out_of_scope_rule",
+    "fraud_probability": 0.0,
+    "passed": true
+  },
+  {
+    "case": "lowercase type normalised",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": 0.9999956018992893,
+    "passed": true
+  },
+  {
+    "case": "unseen category 'CRYPTO'",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "negative amount",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "amount is a string",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "NaN-like string amount",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "negative balance",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "step = 0",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "empty transaction_id",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "missing sender balance -> needs_review flagged",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": 0.24796009739568003,
+    "passed": true
+  },
+  {
+    "case": "unknown extra field",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "required field missing",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "malformed JSON body",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "batch of 1001 (limit 1000)",
+    "expected_status": 422,
+    "status": 422,
+    "mode": null,
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "model failure -> heuristic fallback",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "fallback_rule",
+    "fraud_probability": 0.5,
+    "passed": true
+  },
+  {
+    "case": "/health reports degraded during failure",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "degraded",
+    "fraud_probability": null,
+    "passed": true
+  },
+  {
+    "case": "model path: unseen category (one-hot ignore)",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": 0.9999974405946046,
+    "passed": true
+  },
+  {
+    "case": "amount x1,10,100,1e4 stays in [0,1]",
+    "expected_status": 200,
+    "status": 200,
+    "mode": "model",
+    "fraud_probability": [
+      0.9999978729926196,
+      0.9999985609155211,
+      0.9999985609155211,
+      0.9999985609155211
+    ],
+    "passed": true
+  }
+]
